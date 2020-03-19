@@ -39,7 +39,7 @@ void phoJetNtuplizer::branchGenInfo(TTree* tree){
   tree->Branch("genHT",         &genHT_);
   tree->Branch("pdfWeight",     &pdfWeight_);
   tree->Branch("pdfSystWeight", &pdfSystWeight_);
- tree->Branch("psWeight",      &psWeight_);
+  tree->Branch("psWeight",      &psWeight_);
 
   tree->Branch("nPUInfo",       &nPUInfo_);
   tree->Branch("nPU",           &nPU_);
@@ -165,13 +165,13 @@ void phoJetNtuplizer::fillGenInfo(const edm::Event& iEvent){
     genIndex++;
 
     /*
-    int status = ip->status();
-    //bool stableFinalStateParticle = status == 1 && ip->pt() > 5.0;
+      int status = ip->status();
+      //bool stableFinalStateParticle = status == 1 && ip->pt() > 5.0;
     
-    bool quarks = abs(ip->pdgId())<7;
+      bool quarks = abs(ip->pdgId())<7;
        
-    // keep non-FSR photons with pT > 5.0 and all leptons with pT > 3.0;
-    bool photonOrLepton =
+      // keep non-FSR photons with pT > 5.0 and all leptons with pT > 3.0;
+      bool photonOrLepton =
       (ip->pdgId() == 22 && (ip->isPromptFinalState() || ip->isLastCopy())) ||
       (status == 1 && abs(ip->pdgId()) == 11 && (ip->isPromptFinalState() || ip->isLastCopy())) ||               
       (status == 1 && abs(ip->pdgId()) == 13 && (ip->isPromptFinalState() || ip->isLastCopy())) ||
@@ -179,19 +179,19 @@ void phoJetNtuplizer::fillGenInfo(const edm::Event& iEvent){
       (status == 1 && ( abs(ip->pdgId()) >= 11 && abs(ip->pdgId()) <= 16 ) && ip->pt() > 3.0)  ||
       (status < 10 && abs(ip->pdgId()) == 15 && ip->pt() > 3.0);
        
-    // select also Z, W, H, top and b 
-    bool heavyParticle =
+      // select also Z, W, H, top and b 
+      bool heavyParticle =
       ((    ip->pdgId()  == 23 && ip->isHardProcess()) || 
-       (abs(ip->pdgId()) == 24 && ip->isHardProcess()) || 
-       (    ip->pdgId()  == 25 && ip->isHardProcess()) ||
-       (abs(ip->pdgId()) ==  6 && ip->isHardProcess()) || 
-       (abs(ip->pdgId()) ==  5 && ip->isHardProcess()));
-       */
+      (abs(ip->pdgId()) == 24 && ip->isHardProcess()) || 
+      (    ip->pdgId()  == 25 && ip->isHardProcess()) ||
+      (abs(ip->pdgId()) ==  6 && ip->isHardProcess()) || 
+      (abs(ip->pdgId()) ==  5 && ip->isHardProcess()));
+    */
 
     const reco::Candidate *p = (const reco::Candidate*)&(*ip);
     if (!p->mother()) continue;
 
-//    if(heavyParticle || photonOrLepton || quarks){
+    //    if(heavyParticle || photonOrLepton || quarks){
     if(ip->isPromptFinalState() || ip->isHardProcess() || ip->isLastCopy() || ip->fromHardProcessFinalState()){
 
       mcPID    .push_back(p->pdgId());
@@ -242,7 +242,7 @@ void phoJetNtuplizer::initGenInfo(){
   genHT_         = -99;
   pdfWeight_     = -99;
   pdfSystWeight_  .clear();
- psWeight_       .clear();
+  psWeight_       .clear();
 
   nPUInfo_       = 0;
   nPU_          .clear();
