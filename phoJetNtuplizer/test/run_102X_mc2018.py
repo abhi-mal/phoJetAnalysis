@@ -28,13 +28,13 @@ process.jec = cms.ESSource("PoolDBESSource",CondDB,
 	)))
 process.es_prefer_jec = cms.ESPrefer('PoolDBESSource','jec')
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000) )
 process.MessageLogger.cerr.FwkReport.reportEvery = 1000
 
 process.source = cms.Source("PoolSource",
     # replace 'myfile.root' with the source file you want to use
     fileNames = cms.untracked.vstring(
-        'file:/hdfs/store/user/varuns/TEST-INPUTFILES/test-mc2018_RunIIAutumn18MiniAOD.root'
+        'file:/hdfs/store/user/ekoenig/MonoZprimeJet/Mx1_Mv1000_MINIAOD.root'
     )
 )
 

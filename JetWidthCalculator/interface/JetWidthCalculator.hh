@@ -13,6 +13,7 @@ class JetWidthCalculator {
 public:
 
   JetWidthCalculator(const pat::Jet&);
+  JetWidthCalculator(const reco::GenJet&);
   
   virtual ~JetWidthCalculator();
 
