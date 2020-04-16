@@ -94,7 +94,7 @@ void phoJetNtuplizer::fillGenInfo(const edm::Event& iEvent){
       if(nominal_psWeight == 0.){
 	throw cms::Exception("input") << "nominal PS-Weight equal to zero (failed to normalize other PS-Weights";
       }
-
+      
       for(uint iweights =0; iweights< ps_Weight_.size(); iweights++){
 	ps_Weight_.at(iweights) /= nominal_psWeight;
 	psWeight_.push_back(ps_Weight_.at(iweights));
