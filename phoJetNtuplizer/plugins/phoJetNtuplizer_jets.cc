@@ -93,11 +93,24 @@ vector<vector<float>> jetConstEt_;
 vector<vector<float>> jetConstEta_;
 vector<vector<float>> jetConstPhi_;
 vector<vector<Int_t>> jetConstPdgId_;
+vector<float> jetChNemPt123_;
+vector<float> jetChNemPt_;
+vector<float> jetChNemPtFrac_;
 
 vector<float>    jetGenJetE_;
 vector<float>    jetGenJetPt_;
 vector<float>    jetGenJetEta_;
 vector<float>    jetGenJetPhi_;
+vector<float>    jetGenJetetaWidth_;
+vector<float>    jetGenJetphiWidth_;
+vector<vector<float>> jetGenJetConstPt_;
+vector<vector<float>> jetGenJetConstEt_;
+vector<vector<float>> jetGenJetConstEta_;
+vector<vector<float>> jetGenJetConstPhi_;
+vector<vector<Int_t>> jetGenJetConstPdgId_;
+vector<float> jetGenJetChNemPt123_;
+vector<float> jetGenJetChNemPt_;
+vector<float> jetGenJetChNemPtFrac_;
 vector<Int_t>    jetGenPartonID_;
 vector<float>    jetGenE_;
 vector<float>    jetGenPt_;
@@ -192,6 +205,9 @@ void phoJetNtuplizer::branchJets(TTree* tree){
     tree->Branch("jetConstEta",                  &jetConstEta_);
     tree->Branch("jetConstPhi",                  &jetConstPhi_);
     tree->Branch("jetConstPdgId",                &jetConstPdgId_);
+    tree->Branch("jetChNemPt123",                &jetChNemPt123_);
+    tree->Branch("jetChNemPt",                   &jetChNemPt_);
+    tree->Branch("jetChNemPtFrac",               &jetChNemPtFrac_);
   }
 
   if(runGenInfo_){
@@ -209,19 +225,34 @@ void phoJetNtuplizer::branchJets(TTree* tree){
     tree->Branch("jetP4SmearUp",                 &jetP4SmearUp_);
     tree->Branch("jetP4SmearDo",                 &jetP4SmearDo_);
 
-  if(runJetWidthCalculator_){
-    tree->Branch("jetGenetaWidth",                  &jetetaWidth_);
-    tree->Branch("jetGenphiWidth",                  &jetphiWidth_);
-    //tree->Branch("jetGennPhotons",                  &jetnPhotons_);
-    //tree->Branch("jetGennCHPions",                  &jetnCHPions_);
-    //tree->Branch("jetGennMisc",                     &jetnMisc_);
-    //tree->Branch("jetGenMiscPdgId",                 &jetMiscPdgId_);
-    tree->Branch("jetGenConstPt",                   &jetConstPt_);
-    tree->Branch("jetGenConstEt",                   &jetConstEt_);
-    tree->Branch("jetGenConstEta",                  &jetConstEta_);
-    tree->Branch("jetGenConstPhi",                  &jetConstPhi_);
-    tree->Branch("jetGenConstPdgId",                &jetConstPdgId_);
-  }
+    if(runJetWidthCalculator_){
+      tree->Branch("jetGenJetetaWidth",                  &jetGenJetetaWidth_);
+      tree->Branch("jetGenJetphiWidth",                  &jetGenJetphiWidth_);
+      //tree->Branch("jetGenJetnPhotons",                  &jetGenJetnPhotons_);
+      //tree->Branch("jetGenJetnCHPions",                  &jetGenJetnCHPions_);
+      //tree->Branch("jetGenJetnMisc",                     &jetGenJetnMisc_);
+      //tree->Branch("jetGenJetMiscPdgId",                 &jetGenJetMiscPdgId_);
+      tree->Branch("jetGenJetConstPt",                   &jetGenJetConstPt_);
+      tree->Branch("jetGenJetConstEt",                   &jetGenJetConstEt_);
+      tree->Branch("jetGenJetConstEta",                  &jetGenJetConstEta_);
+      tree->Branch("jetGenJetConstPhi",                  &jetGenJetConstPhi_);
+      tree->Branch("jetGenJetConstPdgId",                &jetGenJetConstPdgId_);
+      tree->Branch("jetGenJetChNemPt123",                &jetGenJetChNemPt123_);
+      tree->Branch("jetGenJetChNemPt",                   &jetGenJetChNemPt_);
+      tree->Branch("jetGenJetChNemPtFrac",               &jetGenJetChNemPtFrac_);
+      
+      // tree->Branch("jetGenetaWidth",                  &jetGenetaWidth_);
+      // tree->Branch("jetGenphiWidth",                  &jetGenphiWidth_);
+      // //tree->Branch("jetGennPhotons",                  &jetGennPhotons_);
+      // //tree->Branch("jetGennCHPions",                  &jetGennCHPions_);
+      // //tree->Branch("jetGennMisc",                     &jetGennMisc_);
+      // //tree->Branch("jetGenMiscPdgId",                 &jetGenMiscPdgId_);
+      // tree->Branch("jetGenConstPt",                   &jetGenConstPt_);
+      // tree->Branch("jetGenConstEt",                   &jetGenConstEt_);
+      // tree->Branch("jetGenConstEta",                  &jetGenConstEta_);
+      // tree->Branch("jetGenConstPhi",                  &jetGenConstPhi_);
+      // tree->Branch("jetGenConstPdgId",                &jetGenConstPdgId_);
+    }
   }
 
 }
@@ -417,6 +448,9 @@ void phoJetNtuplizer::fillJets(const edm::Event& iEvent, const edm::EventSetup& 
       jetConstEta_       .push_back(jwc.getConstEta());
       jetConstPhi_       .push_back(jwc.getConstPhi());
       jetConstPdgId_     .push_back(jwc.getConstPdgId());
+      jetChNemPt123_     .push_back(jwc.getChNemPt123());
+      jetChNemPt_        .push_back(jwc.getChNemPt());
+      jetChNemPtFrac_    .push_back(jwc.getChNemPtFrac());
     }
 
 
@@ -437,6 +471,24 @@ void phoJetNtuplizer::fillJets(const edm::Event& iEvent, const edm::EventSetup& 
 	if ((*iJet).genParton()->mother()) {
 	  jetGenPartonMomID = (*iJet).genParton()->mother()->pdgId();
 	}
+	//JetWidthCalculator
+	// if(runJetWidthCalculator_){
+	//   const reco::GenParticle &jet = *(*jetHandle)[nJet_].genParton();
+	//   JetWidthCalculator jwc(jet);
+	//   jetGenetaWidth_       .push_back(jwc.getEtaWidth());
+	//   jetGenphiWidth_       .push_back(jwc.getPhiWidth());
+	//   //jetGennPhotons_       .push_back(jwc.getnPhotons());
+	//   //jetGennCHPions_       .push_back(jwc.getnCHPions());
+	//   //jetGennMisc_          .push_back(jwc.getnMiscParticles());
+	//   //jetGenMiscPdgId_      .push_back(jwc.getMiscPdgId());
+	  
+	  
+	//   jetGenConstPt_        .push_back(jwc.getConstPt());
+	//   jetGenConstEt_        .push_back(jwc.getConstEt());
+	//   jetGenConstEta_       .push_back(jwc.getConstEta());
+	//   jetGenConstPhi_       .push_back(jwc.getConstPhi());
+	//   jetGenConstPdgId_     .push_back(jwc.getConstPdgId());
+	// }
       }
       
       jetGenPartonID_     .push_back(jetGenPartonID);
@@ -460,19 +512,22 @@ void phoJetNtuplizer::fillJets(const edm::Event& iEvent, const edm::EventSetup& 
 	if(runJetWidthCalculator_){
 	  const reco::GenJet &jet = *(*jetHandle)[nJet_].genJet();
 	  JetWidthCalculator jwc(jet);
-	  jetGenetaWidth_       .push_back(jwc.getEtaWidth());
-	  jetGenphiWidth_       .push_back(jwc.getPhiWidth());
-	  //jetGennPhotons_       .push_back(jwc.getnPhotons());
-	  //jetGennCHPions_       .push_back(jwc.getnCHPions());
-	  //jetGennMisc_          .push_back(jwc.getnMiscParticles());
-	  //jetGenMiscPdgId_      .push_back(jwc.getMiscPdgId());
+	  jetGenJetetaWidth_       .push_back(jwc.getEtaWidth());
+	  jetGenJetphiWidth_       .push_back(jwc.getPhiWidth());
+	  //jetGenJetnPhotons_       .push_back(jwc.getnPhotons());
+	  //jetGenJetnCHPions_       .push_back(jwc.getnCHPions());
+	  //jetGenJetnMisc_          .push_back(jwc.getnMiscParticles());
+	  //jetGenJetMiscPdgId_      .push_back(jwc.getMiscPdgId());
 	  
 	  
-	  jetGenConstPt_        .push_back(jwc.getConstPt());
-	  jetGenConstEt_        .push_back(jwc.getConstEt());
-	  jetGenConstEta_       .push_back(jwc.getConstEta());
-	  jetGenConstPhi_       .push_back(jwc.getConstPhi());
-	  jetGenConstPdgId_     .push_back(jwc.getConstPdgId());
+	  jetGenJetConstPt_        .push_back(jwc.getConstPt());
+	  jetGenJetConstEt_        .push_back(jwc.getConstEt());
+	  jetGenJetConstEta_       .push_back(jwc.getConstEta());
+	  jetGenJetConstPhi_       .push_back(jwc.getConstPhi());
+	  jetGenJetConstPdgId_     .push_back(jwc.getConstPdgId());
+	  jetGenJetChNemPt123_     .push_back(jwc.getChNemPt123());
+	  jetGenJetChNemPt_        .push_back(jwc.getChNemPt());
+	  jetGenJetChNemPtFrac_    .push_back(jwc.getChNemPtFrac());
 	}
       }
       jetGenJetE_         .push_back(jetGenJetE);
@@ -600,11 +655,30 @@ void phoJetNtuplizer::initJets(){
   jetConstEta_                  .clear();
   jetConstPhi_                  .clear();
   jetConstPdgId_                .clear();
+  jetChNemPt123_                .clear();
+  jetChNemPt_                   .clear();
+  jetChNemPtFrac_               .clear();
 
   jetGenJetE_                   .clear();
   jetGenJetPt_                  .clear();
   jetGenJetEta_                 .clear();
   jetGenJetPhi_                 .clear();
+
+  jetGenJetetaWidth_            .clear();
+  jetGenJetphiWidth_            .clear();
+  //jetGenJetnPhotons_            .clear();
+  //jetGenJetnCHPions_            .clear();
+  //jetGenJetnMisc_               .clear();
+  //jetGenJetMiscPdgId_           .clear();
+  jetGenJetConstPt_             .clear();
+  jetGenJetConstEt_             .clear();
+  jetGenJetConstEta_            .clear();
+  jetGenJetConstPhi_            .clear();
+  jetGenJetConstPdgId_          .clear();
+  jetGenJetChNemPt123_          .clear();
+  jetGenJetChNemPt_             .clear();
+  jetGenJetChNemPtFrac_         .clear();
+  
   jetGenPartonID_               .clear();
   jetGenE_                      .clear();
   jetGenPt_                     .clear();

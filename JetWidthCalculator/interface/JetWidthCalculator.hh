@@ -14,6 +14,7 @@ public:
 
   JetWidthCalculator(const pat::Jet&);
   JetWidthCalculator(const reco::GenJet&);
+  JetWidthCalculator(const reco::GenParticle&);
   
   virtual ~JetWidthCalculator();
 
@@ -23,6 +24,9 @@ public:
   float getPFCandsPtSum()   {return ptSum_;}
   float getPFCand12PtSum()  {return pfCand12PtSum_;}
   float getPFCand12Ratio()  {return pt12ratio_;}
+  float getChNemPt123()     {return chNemPt123_;}
+  float getChNemPt()        {return chNemPt_;}
+  float getChNemPtFrac()    {return chNemPtFrac_;}
 
 
   int getnPhotons()       {return nPhotons_;}
@@ -48,12 +52,21 @@ private:
   // No equality operator is needed
   const JetWidthCalculator& operator=(const JetWidthCalculator&);
 
+  void PtFracCalculator();
+  void print();
+
+  const char* type_;
+
   float etaWidth_;
   float phiWidth_;
 
   float ptSum_;
   float pfCand12PtSum_;
   float pt12ratio_;
+
+  float chNemPt_;
+  float chNemPt123_;
+  float chNemPtFrac_;
 
   int nPhotons_;
   int nCHPions_;
