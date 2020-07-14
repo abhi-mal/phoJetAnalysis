@@ -19,4 +19,5 @@
 <use name="JetMETCorrections/Objects"/>
 <use name="JetMETCorrections/Modules"/>
 <use name="phoJetAnalysis/JetWidthCalculator"/>
+<use name="phoJetAnalysis/TauWidthCalculator"/>
 <flags EDM_PLUGIN="1"/>

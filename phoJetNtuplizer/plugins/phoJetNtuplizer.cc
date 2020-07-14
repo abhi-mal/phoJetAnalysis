@@ -100,6 +100,7 @@ phoJetNtuplizer::phoJetNtuplizer(const edm::ParameterSet& iConfig):
 
   //Tau Info
   runTaus_                 = iConfig.getParameter<bool>("runTaus");
+  runTauWidthCalculator_          =  iConfig.getParameter<bool> ("runTauWidthCalculator");
   //tausToken_               = consumes<View<pat::Tau> >(iConfig.getParameter<InputTag>("tausToken"));
   tausToken_               = consumes<vector<pat::Tau> >(iConfig.getParameter<InputTag>("tausToken"));
 
