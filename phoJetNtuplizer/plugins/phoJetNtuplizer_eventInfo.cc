@@ -284,6 +284,7 @@ void phoJetNtuplizer::fillEventInfo(const edm::Event& iEvent, const edm::EventSe
     else if (name.find("HLT_TightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_CrossL1")         != string::npos) bitTau =  2;
     else if (name.find("HLT_MediumChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_CrossL1")        != string::npos) bitTau =  3;
     else if (name.find("HLT_TightChargedIsoPFTau40_Trk1_eta2p1_Reg_CrossL1")                 != string::npos) bitTau =  4;
+    // TauTau Final State Triggers
     else if (name.find("HLT_DoubleMedium_ChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v")       != string::npos) bitTau =  5;
     else if (name.find("HLT_DoubleTight_ChargedIsoPFTau40_Trk1_eta2p1_Reg_v")                != string::npos) bitTau =  6;
     else if (name.find("HLT_DoubleTight_ChargedIsoPF_Tau35_Trk1_TightID_eta2p1_Reg_v")       != string::npos) bitTau =  7;
