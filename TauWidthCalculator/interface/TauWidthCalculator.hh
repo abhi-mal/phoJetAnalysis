@@ -27,6 +27,7 @@ public:
   int getIsolationnPhotons()       {return iso_nPhotons_;}
   int getIsolationnCHPions()       {return iso_nCHPions_;}
   int getIsolationnMiscParticles() {return iso_nMiscParticles_;}
+  int getIsolationnCands()       {return iso_nCands_;}
 
 
   vector<float> getIsolationConstPt()         {return iso_ConstPt_;}
@@ -47,6 +48,7 @@ public:
   int getSignalnPhotons()       {return sig_nPhotons_;}
   int getSignalnCHPions()       {return sig_nCHPions_;}
   int getSignalnMiscParticles() {return sig_nMiscParticles_;}
+  int getSignalnCands()       {return sig_nCands_;}
 
 
   vector<float> getSignalConstPt()         {return sig_ConstPt_;}
@@ -80,6 +82,7 @@ private:
   int iso_nPhotons_;
   int iso_nCHPions_;
   int iso_nMiscParticles_;
+  int iso_nCands_;
 
   vector<float> iso_ConstPt_;
   vector<float> iso_ConstEt_;
@@ -98,6 +101,7 @@ private:
   int sig_nPhotons_;
   int sig_nCHPions_;
   int sig_nMiscParticles_;
+  int sig_nCands_;
 
   vector<float> sig_ConstPt_;
   vector<float> sig_ConstEt_;

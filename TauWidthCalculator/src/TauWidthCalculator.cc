@@ -32,6 +32,7 @@ void TauWidthCalculator::IsolationCalculation(const pat::Tau& tau) {
   iso_nPhotons_              = 0;
   iso_nCHPions_              = 0;
   iso_nMiscParticles_        = 0;
+  iso_nCands_                = 0;
 
   iso_ConstPt_         .clear();
   iso_ConstEt_         .clear();
@@ -68,6 +69,7 @@ void TauWidthCalculator::IsolationCalculation(const pat::Tau& tau) {
     
     phiSum_   += (pfCand->phi() * pfCand->et());
     phiSqSum_ += (pfCand->phi() * pfCand->phi() * pfCand->et());
+    iso_nCands_++;
   }
 
   std::sort(tauDaughters.begin(),tauDaughters.end(),[](const auto& p1, const auto& p2){return p1.first>p2.first;});
@@ -96,11 +98,15 @@ void TauWidthCalculator::IsolationCalculation(const pat::Tau& tau) {
   if(etSum_ < 0.000001) etSum_ = 0.000001; // To avoid NaNs
   float etaAve_   = etaSum_/etSum_;
   float etaSqAve_ = etaSqSum_/etSum_;
-  iso_etaWidth_        = sqrt(etaSqAve_ - (etaAve_ * etaAve_));
+  float etaWidthSq_ = etaSqAve_ - (etaAve_ * etaAve_);
+  if ( etaWidthSq_ < 0 ) etaWidthSq_ = 0; // To avoid NaNs
+  iso_etaWidth_        = sqrt(etaWidthSq_);
   
   float phiAve_   = phiSum_ / etSum_;
   float phiSqAve_ = phiSqSum_ / etSum_;
-  iso_phiWidth_        = sqrt(phiSqAve_ - (phiAve_ * phiAve_));
+  float phiWidthSq_ = phiSqAve_ - (phiAve_ * phiAve_);
+  if ( phiWidthSq_ < 0 ) phiWidthSq_ = 0; // To avoid NaNs
+  iso_phiWidth_        = sqrt(phiWidthSq_);
 }
 
 void TauWidthCalculator::SignalCalculation(const pat::Tau& tau) {
@@ -125,6 +131,7 @@ void TauWidthCalculator::SignalCalculation(const pat::Tau& tau) {
   sig_nPhotons_              = 0;
   sig_nCHPions_              = 0;
   sig_nMiscParticles_        = 0;
+  sig_nCands_                = 0;
 
   sig_ConstPt_         .clear();
   sig_ConstEt_         .clear();
@@ -161,6 +168,7 @@ void TauWidthCalculator::SignalCalculation(const pat::Tau& tau) {
     
     phiSum_   += (pfCand->phi() * pfCand->et());
     phiSqSum_ += (pfCand->phi() * pfCand->phi() * pfCand->et());
+    sig_nCands_++;
   }
 
   std::sort(tauDaughters.begin(),tauDaughters.end(),[](const auto& p1, const auto& p2){return p1.first>p2.first;});
@@ -186,12 +194,17 @@ void TauWidthCalculator::SignalCalculation(const pat::Tau& tau) {
   sig_pfCand12PtSum_ = pfCand1pt_ + pfCand2pt_;
   sig_pt12ratio_     = (sig_pfCand12PtSum_/sig_ptSum_);
   
+  
   if(etSum_ < 0.000001) etSum_ = 0.000001; // To avoid NaNs
   float etaAve_   = etaSum_/etSum_;
   float etaSqAve_ = etaSqSum_/etSum_;
-  sig_etaWidth_        = sqrt(etaSqAve_ - (etaAve_ * etaAve_));
+  float etaWidthSq_ = etaSqAve_ - (etaAve_ * etaAve_);
+  if ( etaWidthSq_ < 0 ) etaWidthSq_ = 0; // To avoid NaNs
+  sig_etaWidth_        = sqrt(etaWidthSq_);
   
   float phiAve_   = phiSum_ / etSum_;
   float phiSqAve_ = phiSqSum_ / etSum_;
-  sig_phiWidth_        = sqrt(phiSqAve_ - (phiAve_ * phiAve_));
+  float phiWidthSq_ = phiSqAve_ - (phiAve_ * phiAve_);
+  if ( phiWidthSq_ < 0 ) phiWidthSq_ = 0; // To avoid NaNs
+  sig_phiWidth_        = sqrt(phiWidthSq_);
 }
