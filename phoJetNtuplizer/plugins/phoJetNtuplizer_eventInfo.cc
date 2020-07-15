@@ -45,6 +45,8 @@ ULong64_t     HLTJetRejectedByPS_;
 
 void phoJetNtuplizer::branchEventInfo(TTree* tree) {
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchEventInfo -->BEGIN<-- "<<std::endl;
+
   tree->Branch("run",                  &run_);
   tree->Branch("event",                &event_);
   tree->Branch("lumis",                &lumis_);
@@ -79,6 +81,8 @@ void phoJetNtuplizer::branchEventInfo(TTree* tree) {
   tree->Branch("HLTJet",               &HLTJet_);
   tree->Branch("HLTJetIsPrescaled",    &HLTJetIsPrescaled_);
   tree->Branch("HLTJetRejectedByPS",   &HLTJetRejectedByPS_);
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchEventInfo -->END<-- "<<std::endl;
 }
 
 void phoJetNtuplizer::fillEventInfo(const edm::Event& iEvent, const edm::EventSetup& iSetup){

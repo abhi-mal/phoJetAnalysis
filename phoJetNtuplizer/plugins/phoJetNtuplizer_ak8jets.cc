@@ -64,6 +64,8 @@ vector<float> ak8JetJECUnc_;
 
 void phoJetNtuplizer::branchak8Jets(TTree* tree){
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchak8Jets -->BEGIN<-- "<<std::endl;
+
   tree->Branch("nak8Jet",                  &nak8Jet_);
   tree->Branch("ak8JetPt",                 &ak8JetPt_);
   tree->Branch("ak8JetE",                  &ak8JetE_);
@@ -107,9 +109,14 @@ void phoJetNtuplizer::branchak8Jets(TTree* tree){
 
   //tree->Branch("ak8JetL2L3corr",             &ak8JetL2L3corr_);
 
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchak8Jets -->END<--"<<std::endl;
 }
 
-void phoJetNtuplizer::fillak8Jets(const edm::Event& iEvent, const edm::EventSetup& iSetup){        
+void phoJetNtuplizer::fillak8Jets(const edm::Event& iEvent, const edm::EventSetup& iSetup){    
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillak8Jets -->BEGIN<-- "<<std::endl;
+  
   initak8Jets();
 
   edm::Handle<edm::View<pat::Jet> > ak8jetHandle;
@@ -190,6 +197,8 @@ void phoJetNtuplizer::fillak8Jets(const edm::Event& iEvent, const edm::EventSetu
   }
 
 delete ak8jecUnc;
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillak8Jets -->END<--"<<std::endl;
 }
 
 void phoJetNtuplizer::initak8Jets(){

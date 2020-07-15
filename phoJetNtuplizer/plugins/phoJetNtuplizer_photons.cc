@@ -67,6 +67,8 @@ vector<float>    phoResol_phi_dn_;
 
 void phoJetNtuplizer::branchPhotons(TTree* tree){
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchPhotons -->BEGIN<--"<<std::endl;
+
   tree->Branch("nPho",                     &nPho_);
   tree->Branch("phoE",                     &phoE_);
   tree->Branch("phoEt",                    &phoEt_);
@@ -132,6 +134,8 @@ void phoJetNtuplizer::branchPhotons(TTree* tree){
   tree->Branch("phoResol_phi_up",          &phoResol_phi_up_);
   tree->Branch("phoResol_phi_dn",          &phoResol_phi_dn_);
 
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchPhotons -->END<--"<<std::endl;
 }
 
 void phoJetNtuplizer::fillPhotons(const edm::Event& iEvent, const edm::EventSetup& iSetup){
@@ -260,9 +264,6 @@ void phoJetNtuplizer::fillPhotons(const edm::Event& iEvent, const edm::EventSetu
 }
 
 void phoJetNtuplizer::initPhotons(){
-
-  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::initPhotons -->BEGIN<--"<<std::endl;
-
   nPho_ = 0;
 
   phoE_                        .clear();

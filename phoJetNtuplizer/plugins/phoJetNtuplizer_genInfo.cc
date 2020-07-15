@@ -32,6 +32,8 @@ vector<int>      mcIndex;
 
 void phoJetNtuplizer::branchGenInfo(TTree* tree){
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchGenInfo -->BEGIN<-- "<<std::endl;
+
   tree->Branch("pdf",           &pdf_);
   tree->Branch("pthat",         &pthat_);
   tree->Branch("processID",     &processID_);
@@ -64,6 +66,8 @@ void phoJetNtuplizer::branchGenInfo(TTree* tree){
 }
 
 void phoJetNtuplizer::fillGenInfo(const edm::Event& iEvent){
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillGenInfo -->BEGIN<-- "<<std::endl;
 
   initGenInfo();
 
@@ -230,6 +234,8 @@ void phoJetNtuplizer::fillGenInfo(const edm::Event& iEvent){
       nMC_++;
     }
   } // loop over gen-level particle
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillGenInfo -->END<--"<<std::endl;
 
 }
 

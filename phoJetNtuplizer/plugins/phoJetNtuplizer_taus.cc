@@ -59,6 +59,7 @@ vector<UInt_t> tau_IDbits_;
 vector<float>  tau_byIsolationMVArun2017v2DBoldDMwLTraw2017_;
 
 void phoJetNtuplizer::branchTaus (TTree* tree){
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchTaus -->BEGIN<-- "<<std::endl;
 
   tree->Branch("nTau",         &nTau_);
   //Tau Kinematics
@@ -120,10 +121,13 @@ void phoJetNtuplizer::branchTaus (TTree* tree){
   tree->Branch("tau_IDbits",                                            &tau_IDbits_);
   tree->Branch("tau_byIsolationMVArun2017v2DBoldDMwLTraw2017",          &tau_byIsolationMVArun2017v2DBoldDMwLTraw2017_);
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchTaus -->END<-- "<<std::endl;
 }
 
 
 void phoJetNtuplizer::fillTaus (const edm::Event& iEvent){
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillTaus -->BEGIN<-- "<<std::endl;
 
   initTaus();
 
@@ -259,6 +263,7 @@ void phoJetNtuplizer::fillTaus (const edm::Event& iEvent){
 
   } // loop over tau candidates
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillTaus -->END<--"<<std::endl;
 }
 
 void phoJetNtuplizer::initTaus(){

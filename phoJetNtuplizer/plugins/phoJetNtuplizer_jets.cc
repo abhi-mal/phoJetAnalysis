@@ -107,6 +107,8 @@ vector<Int_t>    jetGenPartonMomID_;
 
 void phoJetNtuplizer::branchJets(TTree* tree){
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchJets -->BEGIN<-- "<<std::endl;
+
   tree->Branch("nJet",                         &nJet_);
 
   tree->Branch("jetPt",                        &jetPt_);
@@ -203,8 +205,11 @@ void phoJetNtuplizer::branchJets(TTree* tree){
     tree->Branch("jetP4SmearDo",                 &jetP4SmearDo_);
   }
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchJets -->END<--"<<std::endl;
 }
 void phoJetNtuplizer::fillJets(const edm::Event& iEvent, const edm::EventSetup& iSetup){
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillJets -->BEGIN<-- "<<std::endl;
 
   initJets();
 
@@ -470,6 +475,8 @@ void phoJetNtuplizer::fillJets(const edm::Event& iEvent, const edm::EventSetup& 
     nJet_++;
   }
   delete jecUnc;
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillJets -->END<--"<<std::endl;
 }
 
 void phoJetNtuplizer::initJets(){

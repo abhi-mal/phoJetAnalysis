@@ -36,6 +36,8 @@ float pfMETPhi_T1UESDo_;
 
 void phoJetNtuplizer::branchMet(TTree* tree){
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchMET -->BEGIN<-- "<<std::endl;
+
   if (!is_Data_) {
     tree->Branch("genMET",      &genMET_);
     tree->Branch("genMETPhi",   &genMETPhi_);
@@ -65,6 +67,8 @@ void phoJetNtuplizer::branchMet(TTree* tree){
   tree->Branch("pfMETPhi_T1JESDo", &pfMETPhi_T1JESDo_);
   tree->Branch("pfMETPhi_T1UESUp", &pfMETPhi_T1UESUp_);
   tree->Branch("pfMETPhi_T1UESDo", &pfMETPhi_T1UESDo_);
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchMET -->END<-- "<<std::endl;
 }
 
 void phoJetNtuplizer::fillMet(const edm::Event& iEvent, const edm::EventSetup& iSetup){
