@@ -41,6 +41,7 @@ vector<float>  tau_LeadChargedHadron_dxy_;
 
 vector<float> tau_IsolationEtaWidth_;
 vector<float> tau_IsolationPhiWidth_;
+vector<int> tau_IsolationNumConst_;
 vector<vector<float>> tau_IsolationConstPt_;
 vector<vector<float>> tau_IsolationConstEt_;
 vector<vector<float>> tau_IsolationConstEta_;
@@ -49,6 +50,7 @@ vector<vector<Int_t>> tau_IsolationConstPdgId_;
 
 vector<float> tau_SignalEtaWidth_;
 vector<float> tau_SignalPhiWidth_;
+vector<int> tau_SignalNumConst_;
 vector<vector<float>> tau_SignalConstPt_;
 vector<vector<float>> tau_SignalConstEt_;
 vector<vector<float>> tau_SignalConstEta_;
@@ -102,6 +104,7 @@ void phoJetNtuplizer::branchTaus (TTree* tree){
   if (runTauWidthCalculator_) {
     tree->Branch("tau_IsolationEtaWidth",                                 &tau_IsolationEtaWidth_);
     tree->Branch("tau_IsolationPhiWidth",                                 &tau_IsolationPhiWidth_);
+    // tree->Branch("tau_IsolationNumConst",                                 &tau_IsolationNumConst_);
     tree->Branch("tau_IsolationConstPt",                                  &tau_IsolationConstPt_);
     tree->Branch("tau_IsolationConstEt",                                  &tau_IsolationConstEt_);
     tree->Branch("tau_IsolationConstEta",                                 &tau_IsolationConstEta_);
@@ -110,6 +113,7 @@ void phoJetNtuplizer::branchTaus (TTree* tree){
     
     tree->Branch("tau_SignalEtaWidth",                                    &tau_SignalEtaWidth_);
     tree->Branch("tau_SignalPhiWidth",                                    &tau_SignalPhiWidth_);
+    // tree->Branch("tau_SignalNumConst",                                    &tau_SignalNumConst_);
     tree->Branch("tau_SignalConstPt",                                     &tau_SignalConstPt_);
     tree->Branch("tau_SignalConstEt",                                     &tau_SignalConstEt_);
     tree->Branch("tau_SignalConstEta",                                    &tau_SignalConstEta_);
@@ -178,6 +182,7 @@ void phoJetNtuplizer::fillTaus (const edm::Event& iEvent){
       TauWidthCalculator twc(tau);
       tau_IsolationEtaWidth_ .push_back(twc.getIsolationEtaWidth());
       tau_IsolationPhiWidth_ .push_back(twc.getIsolationPhiWidth());
+      tau_IsolationNumConst_ .push_back(twc.getIsolationnCands());
       tau_IsolationConstPt_  .push_back(twc.getIsolationConstPt());
       tau_IsolationConstEt_  .push_back(twc.getIsolationConstEt());
       tau_IsolationConstEta_ .push_back(twc.getIsolationConstEta());
@@ -186,6 +191,7 @@ void phoJetNtuplizer::fillTaus (const edm::Event& iEvent){
       
       tau_SignalEtaWidth_ .push_back(twc.getSignalEtaWidth());
       tau_SignalPhiWidth_ .push_back(twc.getSignalPhiWidth());
+      tau_SignalNumConst_ .push_back(twc.getSignalnCands());
       tau_SignalConstPt_  .push_back(twc.getSignalConstPt());
       tau_SignalConstEt_  .push_back(twc.getSignalConstEt());
       tau_SignalConstEta_ .push_back(twc.getSignalConstEta());
@@ -307,6 +313,7 @@ void phoJetNtuplizer::initTaus(){
 
   tau_IsolationEtaWidth_                              .clear();
   tau_IsolationPhiWidth_                              .clear();
+  tau_IsolationNumConst_                              .clear();
   tau_IsolationConstPt_                               .clear();
   tau_IsolationConstEt_                               .clear();
   tau_IsolationConstEta_                              .clear();
@@ -315,6 +322,7 @@ void phoJetNtuplizer::initTaus(){
   
   tau_SignalEtaWidth_                                 .clear();
   tau_SignalPhiWidth_                                 .clear();
+  tau_SignalNumConst_                                 .clear();
   tau_SignalConstPt_                                  .clear();
   tau_SignalConstEt_                                  .clear();
   tau_SignalConstEta_                                 .clear();
