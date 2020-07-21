@@ -3,3 +3,8 @@ __init__.py
 *.so
 *.root
 .*.swp
+crab.log
+crab_*/
+run*.py
+!run*mc2018.py
+!run*data2018.py
