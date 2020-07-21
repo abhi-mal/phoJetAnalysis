@@ -1,4 +1,5 @@
 #include "phoJetAnalysis/phoJetNtuplizer/interface/phoJetNtuplizer.h"
+#include "phoJetAnalysis/TauWidthCalculator/interface/TauWidthCalculator.hh"
 
 Int_t          nTau_;
 //Tau Kinematics
@@ -38,10 +39,29 @@ vector<float>  tau_LeadChargedHadronPt_;
 vector<float>  tau_LeadChargedHadron_dz_;
 vector<float>  tau_LeadChargedHadron_dxy_;
 
+vector<float> tau_IsolationEtaWidth_;
+vector<float> tau_IsolationPhiWidth_;
+vector<int> tau_IsolationNumConst_;
+vector<vector<float>> tau_IsolationConstPt_;
+vector<vector<float>> tau_IsolationConstEt_;
+vector<vector<float>> tau_IsolationConstEta_;
+vector<vector<float>> tau_IsolationConstPhi_;
+vector<vector<Int_t>> tau_IsolationConstPdgId_;
+
+vector<float> tau_SignalEtaWidth_;
+vector<float> tau_SignalPhiWidth_;
+vector<int> tau_SignalNumConst_;
+vector<vector<float>> tau_SignalConstPt_;
+vector<vector<float>> tau_SignalConstEt_;
+vector<vector<float>> tau_SignalConstEta_;
+vector<vector<float>> tau_SignalConstPhi_;
+vector<vector<Int_t>> tau_SignalConstPdgId_;
+
 vector<UInt_t> tau_IDbits_;
 vector<float>  tau_byIsolationMVArun2017v2DBoldDMwLTraw2017_;
 
 void phoJetNtuplizer::branchTaus (TTree* tree){
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchTaus -->BEGIN<-- "<<std::endl;
 
   tree->Branch("nTau",         &nTau_);
   //Tau Kinematics
@@ -81,14 +101,37 @@ void phoJetNtuplizer::branchTaus (TTree* tree){
   tree->Branch("tau_LeadChargedHadron_dz",                              &tau_LeadChargedHadron_dz_);
   tree->Branch("tau_LeadChargedHadron_dxy",                             &tau_LeadChargedHadron_dxy_);
 
+  if (runTauWidthCalculator_) {
+    tree->Branch("tau_IsolationEtaWidth",                                 &tau_IsolationEtaWidth_);
+    tree->Branch("tau_IsolationPhiWidth",                                 &tau_IsolationPhiWidth_);
+    // tree->Branch("tau_IsolationNumConst",                                 &tau_IsolationNumConst_);
+    tree->Branch("tau_IsolationConstPt",                                  &tau_IsolationConstPt_);
+    tree->Branch("tau_IsolationConstEt",                                  &tau_IsolationConstEt_);
+    tree->Branch("tau_IsolationConstEta",                                 &tau_IsolationConstEta_);
+    tree->Branch("tau_IsolationConstPhi",                                 &tau_IsolationConstPhi_);
+    tree->Branch("tau_IsolationConstPdgId",                               &tau_IsolationConstPdgId_);
+    
+    tree->Branch("tau_SignalEtaWidth",                                    &tau_SignalEtaWidth_);
+    tree->Branch("tau_SignalPhiWidth",                                    &tau_SignalPhiWidth_);
+    // tree->Branch("tau_SignalNumConst",                                    &tau_SignalNumConst_);
+    tree->Branch("tau_SignalConstPt",                                     &tau_SignalConstPt_);
+    tree->Branch("tau_SignalConstEt",                                     &tau_SignalConstEt_);
+    tree->Branch("tau_SignalConstEta",                                    &tau_SignalConstEta_);
+    tree->Branch("tau_SignalConstPhi",                                    &tau_SignalConstPhi_);
+    tree->Branch("tau_SignalConstPdgId",                                  &tau_SignalConstPdgId_);
+  }
+  
   //Tau Id & Isolation
   tree->Branch("tau_IDbits",                                            &tau_IDbits_);
   tree->Branch("tau_byIsolationMVArun2017v2DBoldDMwLTraw2017",          &tau_byIsolationMVArun2017v2DBoldDMwLTraw2017_);
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchTaus -->END<-- "<<std::endl;
 }
 
 
 void phoJetNtuplizer::fillTaus (const edm::Event& iEvent){
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillTaus -->BEGIN<-- "<<std::endl;
 
   initTaus();
 
@@ -134,6 +177,27 @@ void phoJetNtuplizer::fillTaus (const edm::Event& iEvent){
     tau_NumIsolationPFGammaCands_          .push_back(itau->isolationGammaCands().size());
     tau_NumIsolationPFCands_               .push_back(itau->isolationCands().size());
 
+    if (runTauWidthCalculator_) {
+      const pat::Tau &tau = (*tauHandle)[nTau_];
+      TauWidthCalculator twc(tau);
+      tau_IsolationEtaWidth_ .push_back(twc.getIsolationEtaWidth());
+      tau_IsolationPhiWidth_ .push_back(twc.getIsolationPhiWidth());
+      tau_IsolationNumConst_ .push_back(twc.getIsolationnCands());
+      tau_IsolationConstPt_  .push_back(twc.getIsolationConstPt());
+      tau_IsolationConstEt_  .push_back(twc.getIsolationConstEt());
+      tau_IsolationConstEta_ .push_back(twc.getIsolationConstEta());
+      tau_IsolationConstPhi_ .push_back(twc.getIsolationConstPhi());
+      tau_IsolationConstPdgId_ .push_back(twc.getIsolationConstPdgId());
+      
+      tau_SignalEtaWidth_ .push_back(twc.getSignalEtaWidth());
+      tau_SignalPhiWidth_ .push_back(twc.getSignalPhiWidth());
+      tau_SignalNumConst_ .push_back(twc.getSignalnCands());
+      tau_SignalConstPt_  .push_back(twc.getSignalConstPt());
+      tau_SignalConstEt_  .push_back(twc.getSignalConstEt());
+      tau_SignalConstEta_ .push_back(twc.getSignalConstEta());
+      tau_SignalConstPhi_ .push_back(twc.getSignalConstPhi());
+      tau_SignalConstPdgId_ .push_back(twc.getSignalConstPdgId());
+    }
 
     edm::Handle<reco::VertexCollection> vertexs;
     iEvent.getByToken(vtxToken_, vertexs);
@@ -205,6 +269,7 @@ void phoJetNtuplizer::fillTaus (const edm::Event& iEvent){
 
   } // loop over tau candidates
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillTaus -->END<--"<<std::endl;
 }
 
 void phoJetNtuplizer::initTaus(){
@@ -246,6 +311,24 @@ void phoJetNtuplizer::initTaus(){
   tau_LeadChargedHadron_dz_                           .clear();
   tau_LeadChargedHadron_dxy_                          .clear();
 
+  tau_IsolationEtaWidth_                              .clear();
+  tau_IsolationPhiWidth_                              .clear();
+  tau_IsolationNumConst_                              .clear();
+  tau_IsolationConstPt_                               .clear();
+  tau_IsolationConstEt_                               .clear();
+  tau_IsolationConstEta_                              .clear();
+  tau_IsolationConstPhi_                              .clear();
+  tau_IsolationConstPdgId_                            .clear();
+  
+  tau_SignalEtaWidth_                                 .clear();
+  tau_SignalPhiWidth_                                 .clear();
+  tau_SignalNumConst_                                 .clear();
+  tau_SignalConstPt_                                  .clear();
+  tau_SignalConstEt_                                  .clear();
+  tau_SignalConstEta_                                 .clear();
+  tau_SignalConstPhi_                                 .clear();
+  tau_SignalConstPdgId_                               .clear();
+  
   tau_IDbits_                                         .clear();
   tau_byIsolationMVArun2017v2DBoldDMwLTraw2017_       .clear();
 
