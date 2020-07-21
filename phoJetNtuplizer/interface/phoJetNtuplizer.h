@@ -177,6 +177,7 @@ class phoJetNtuplizer : public edm::one::EDAnalyzer<edm::one::SharedResources>{
 
     //Taus Info
     bool                                             runTaus_;
+    bool                                             runTauWidthCalculator_;
     //edm::EDGetTokenT<edm::View<pat::Tau> >          tausToken_;
     edm::EDGetTokenT<std::vector<pat::Tau> >         tausToken_;
 

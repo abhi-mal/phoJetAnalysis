@@ -42,6 +42,8 @@ ULong64_t     HLTJetRejectedByPS_;
 
 void phoJetNtuplizer::branchEventInfo(TTree* tree) {
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchEventInfo -->BEGIN<-- "<<std::endl;
+
   tree->Branch("run",                  &run_);
   tree->Branch("event",                &event_);
   tree->Branch("lumis",                &lumis_);
@@ -73,6 +75,8 @@ void phoJetNtuplizer::branchEventInfo(TTree* tree) {
   tree->Branch("HLTJet",               &HLTJet_);
   tree->Branch("HLTJetIsPrescaled",    &HLTJetIsPrescaled_);
   tree->Branch("HLTJetRejectedByPS",   &HLTJetRejectedByPS_);
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchEventInfo -->END<-- "<<std::endl;
 }
 
 void phoJetNtuplizer::fillEventInfo(const edm::Event& iEvent, const edm::EventSetup& iSetup){
@@ -261,6 +265,10 @@ void phoJetNtuplizer::fillEventInfo(const edm::Event& iEvent, const edm::EventSe
     else if (name.find("HLT_TightChargedIsoPFTau35_Trk1_TightID_eta2p1_Reg_CrossL1")         != string::npos) bitTau =  2;
     else if (name.find("HLT_MediumChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_CrossL1")        != string::npos) bitTau =  3;
     else if (name.find("HLT_TightChargedIsoPFTau40_Trk1_eta2p1_Reg_CrossL1")                 != string::npos) bitTau =  4;
+    // TauTau Final State Triggers
+    else if (name.find("HLT_DoubleMedium_ChargedIsoPFTau40_Trk1_TightID_eta2p1_Reg_v")       != string::npos) bitTau =  5;
+    else if (name.find("HLT_DoubleTight_ChargedIsoPFTau40_Trk1_eta2p1_Reg_v")                != string::npos) bitTau =  6;
+    else if (name.find("HLT_DoubleTight_ChargedIsoPF_Tau35_Trk1_TightID_eta2p1_Reg_v")       != string::npos) bitTau =  7;
 
     // MET triggers
     int bitMet = -1;

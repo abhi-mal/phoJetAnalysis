@@ -573,6 +573,8 @@ void phoJetNtuplizer::fillJets(const edm::Event& iEvent, const edm::EventSetup& 
     nJet_++;
   }
   delete jecUnc;
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillJets -->END<--"<<std::endl;
 }
 
 void phoJetNtuplizer::initJets(){

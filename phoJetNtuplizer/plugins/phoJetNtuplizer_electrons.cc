@@ -87,6 +87,8 @@ vector<float>    eleResol_phi_dn_;
 
 void phoJetNtuplizer::branchElectrons (TTree* tree){
 
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchElectrons -->BEGIN<-- "<<std::endl;
+
   tree->Branch("nEle",                    &nEle_);
   tree->Branch("elePt",                   &elePt_);
   tree->Branch("eleEta",                  &eleEta_);
@@ -178,9 +180,13 @@ void phoJetNtuplizer::branchElectrons (TTree* tree){
   tree->Branch("eleResol_rho_dn",         &eleResol_rho_dn_);
   tree->Branch("eleResol_phi_up",         &eleResol_phi_up_);
   tree->Branch("eleResol_phi_dn",         &eleResol_phi_dn_);
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::branchElectrons -->END<--"<<std::endl;
 }
 
 void phoJetNtuplizer::fillElectrons (const edm::Event& iEvent, const edm::EventSetup& iSetup, math::XYZPoint &ipv){
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillElectrons -->BEGIN<-- "<<std::endl;
 
   initElectrons();
 
@@ -349,6 +355,8 @@ if(saveAll_){
     nEle_++;
 
   }
+
+  if(debug_) std::cout<< "<<DEBUG>>:: Inside phoJetNtuplizer::fillElectrons -->END<--"<<std::endl;
 } //fillElectrons
 
 void phoJetNtuplizer::initElectrons(){
