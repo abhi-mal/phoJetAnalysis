@@ -28,7 +28,7 @@ process.jec = cms.ESSource("PoolDBESSource",CondDB,
 	)))
 process.es_prefer_jec = cms.ESPrefer('PoolDBESSource','jec')
 
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(-1) )
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100) )
 process.MessageLogger.cerr.FwkReport.reportEvery = 1000
 
 process.source = cms.Source("PoolSource",

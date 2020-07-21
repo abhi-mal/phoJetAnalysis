@@ -1,0 +1,342 @@
+DEBUG 2020-03-27 14:11:35.817 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:35.854 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:35.855 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:35.856 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:35.874 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_DYJetsToLL_HT100-200
+ERROR 2020-03-27 14:11:35.875 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_DYJetsToLL_HT100-200
+DEBUG 2020-03-27 14:11:36.566 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:36.593 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:36.593 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:36.594 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:36.612 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_DYJetsToLL_HT70-100
+ERROR 2020-03-27 14:11:36.613 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_DYJetsToLL_HT70-100
+DEBUG 2020-03-27 14:11:37.239 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:37.272 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:37.273 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:37.273 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:37.277 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT100-200
+ERROR 2020-03-27 14:11:37.277 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT100-200
+DEBUG 2020-03-27 14:11:37.984 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:38.012 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:38.013 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:38.013 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:38.017 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT1200-2500
+ERROR 2020-03-27 14:11:38.018 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT1200-2500
+DEBUG 2020-03-27 14:11:38.707 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:38.739 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:38.739 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:38.740 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:38.753 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT200-400
+ERROR 2020-03-27 14:11:38.753 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT200-400
+DEBUG 2020-03-27 14:11:39.328 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:39.362 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:39.363 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:39.363 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:39.368 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT2500-Inf
+ERROR 2020-03-27 14:11:39.368 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT2500-Inf
+DEBUG 2020-03-27 14:11:39.892 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:39.911 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:39.912 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:39.912 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:39.914 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT400-600
+ERROR 2020-03-27 14:11:39.914 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT400-600
+DEBUG 2020-03-27 14:11:40.440 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:40.472 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:40.472 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:40.473 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:40.474 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT600-800
+ERROR 2020-03-27 14:11:40.475 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT600-800
+DEBUG 2020-03-27 14:11:41.123 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:41.153 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:41.154 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:41.154 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:41.157 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT70-100
+ERROR 2020-03-27 14:11:41.157 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT70-100
+DEBUG 2020-03-27 14:11:41.834 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:41.865 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:41.865 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:41.866 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:41.868 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT800-1200
+ERROR 2020-03-27 14:11:41.868 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_WJetsToLNu_HT800-1200
+DEBUG 2020-03-27 14:11:42.338 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:42.372 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:42.373 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:42.373 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:42.377 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT100-200
+ERROR 2020-03-27 14:11:42.378 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT100-200
+DEBUG 2020-03-27 14:11:42.926 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:42.948 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:42.948 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:42.949 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:42.951 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT1200-2500
+ERROR 2020-03-27 14:11:42.951 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT1200-2500
+DEBUG 2020-03-27 14:11:43.520 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:43.545 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:43.546 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:43.546 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:43.550 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT200-400
+ERROR 2020-03-27 14:11:43.550 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT200-400
+DEBUG 2020-03-27 14:11:44.142 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:44.173 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:44.174 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:44.174 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:44.178 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT2500-Inf
+ERROR 2020-03-27 14:11:44.178 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT2500-Inf
+DEBUG 2020-03-27 14:11:44.793 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:44.823 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:44.824 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:44.824 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:44.828 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT400-600
+ERROR 2020-03-27 14:11:44.828 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT400-600
+DEBUG 2020-03-27 14:11:45.426 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:45.456 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:45.457 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:45.457 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:45.459 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT600-800
+ERROR 2020-03-27 14:11:45.459 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT600-800
+DEBUG 2020-03-27 14:11:45.995 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+DEBUG 2020-03-27 14:11:46.026 UTC: 	 OpenSSl version: OpenSSL 1.0.2k-fips  26 Jan 2017 (Library: OpenSSL 1.0.2d-fips 9 Jul 2015)
+DEBUG 2020-03-27 14:11:46.026 UTC: 	 Executing command: 'status'
+DEBUG 2020-03-27 14:11:46.026 UTC: 	 Found CRAB cache file /afs/hep.wisc.edu/home/ekoenig4/.crab3
+ERROR 2020-03-27 14:11:46.028 UTC: 	 Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT800-1200
+ERROR 2020-03-27 14:11:46.028 UTC: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/bin/crab", line 145, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 40, in __init__
+    SubCommand.__init__(self, logger, cmdargs)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 277, in __init__
+    SubCommand.validateOptions(self)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 599, in validateOptions
+    self.loadLocalCache()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.2001/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 461, in loadLocalCache
+    raise ex
+CachefileNotFoundException: Cannot find .requestcache file in CRAB project directory /nfs_scratch/ekoenig4/MonoZprimeJet/PSWeight_Ntuplizer/CMSSW_10_2_18/src/phoJetAnalysis/phoJetNtuplizer/test/crab_MC2018_Autumn18_Mar2020_PSWeight/crab_job_ZJetsToNuNu_HT800-1200
+DEBUG 2020-03-28 13:30:59.198 UTC: 	 Running on: Linux login05.hep.wisc.edu 4.4.188-1.el7.elrepo.x86_64 #1 SMP Tue Aug 6 13:44:31 EDT 2019 x86_64 x86_64 x86_64 GNU/Linux - CentOS Linux 7 (Core)
+ERROR 2020-03-28 13:30:59.207 UTC: 	 Keyboard Interrupted

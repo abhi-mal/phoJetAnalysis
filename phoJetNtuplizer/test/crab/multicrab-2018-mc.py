@@ -68,8 +68,9 @@ dataset = {
 
 'WWToLNuQQ':  '/WWToLNuQQ_NNPDF31_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM', 
 'WWTo2L2Nu':  '/WWTo2L2Nu_NNPDF31_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM',
-'WWTo4Q':     '/WWTo4Q_NNPDF31_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM'
+'WWTo4Q':     '/WWTo4Q_NNPDF31_TuneCP5_13TeV-powheg-pythia8/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM',
 
+'Zprime_Mx1_Mv1000':'/MonoZprime_V_Mx1_Mv10000_TuneCP5_13TeV_madgraph/RunIIAutumn18MiniAOD-102X_upgrade2018_realistic_v15-v1/MINIAODSIM'
 }
 
 if __name__ == '__main__':
@@ -82,13 +83,13 @@ from CRABClient.UserUtilities import config
 from multiprocessing import Process
 
 config = config()
-name = 'MC2018_Autumn18_May2019'
+name = 'MC2018_Autumn18_Apr2020_GenJetConst'
 config.General.workArea = 'crab_'+name
 config.General.transferOutputs = True
 config.General.transferLogs = False
 
 config.JobType.pluginName = 'Analysis'
-config.JobType.inputFiles = ['Autumn18_V8_MC.db']
+config.JobType.inputFiles = ['Autumn18_V19_MC.db']
 config.JobType.allowUndistributedCMSSW = True
 
 config.section_('Data') 
@@ -100,16 +101,18 @@ config.Site.storageSite = 'T2_US_Wisconsin'
 #config.Site.whitelist = ["T2_US_Wisconsin"]
 #config.Site.blacklist = ['T2_CH_CERN']
 
-#listOfSamples = ['ZJetsToNuNu_HT100-200', 'ZJetsToNuNu_HT200-400', 'ZJetsToNuNu_HT400-600', 'ZJetsToNuNu_HT600-800', 'ZJetsToNuNu_HT800-1200', 'ZJetsToNuNu_HT1200-2500', 'ZJetsToNuNu_HT2500-Inf']
+# listOfSamples = ['ZJetsToNuNu_HT100-200', 'ZJetsToNuNu_HT200-400', 'ZJetsToNuNu_HT400-600', 'ZJetsToNuNu_HT600-800', 'ZJetsToNuNu_HT800-1200', 'ZJetsToNuNu_HT1200-2500', 'ZJetsToNuNu_HT2500-Inf']
 #listOfSamples = ['ZJetsToNuNu_HT200-400', 'ZJetsToNuNu_HT400-600', 'ZJetsToNuNu_HT600-800', 'ZJetsToNuNu_HT800-1200', 'ZJetsToNuNu_HT1200-2500', 'ZJetsToNuNu_HT2500-Inf']
-#listOfSamples = ['WJetsToLNu_HT70-100', 'WJetsToLNu_HT100-200', 'WJetsToLNu_HT200-400', 'WJetsToLNu_HT400-600', 'WJetsToLNu_HT600-800', 'WJetsToLNu_HT800-1200', 'WJetsToLNu_HT1200-2500', 'WJetsToLNu_HT2500-Inf']
+# listOfSamples += ['WJetsToLNu_HT70-100', 'WJetsToLNu_HT100-200', 'WJetsToLNu_HT200-400', 'WJetsToLNu_HT400-600', 'WJetsToLNu_HT600-800', 'WJetsToLNu_HT800-1200', 'WJetsToLNu_HT1200-2500', 'WJetsToLNu_HT2500-Inf']
 #listOfSamples = ['WJetsToLNu_Incl', 'WJetsToLNu_0J_Incl', 'WJetsToLNu_1J_Incl', 'WJetsToLNu_2J_Incl']
-#listOfSamples = ['DYJetsToLL_HT70-100', 'DYJetsToLL_HT100-200', 'DYJetsToLL_HT200-400', 'DYJetsToLL_HT400-600', 'DYJetsToLL_HT600-800', 'DYJetsToLL_HT800-1200', 'DYJetsToLL_HT1200-2500', 'DYJetsToLL_HT2500-Inf']
+# listOfSamples += ['DYJetsToLL_HT70-100', 'DYJetsToLL_HT100-200', 'DYJetsToLL_HT200-400', 'DYJetsToLL_HT400-600', 'DYJetsToLL_HT600-800', 'DYJetsToLL_HT800-1200', 'DYJetsToLL_HT1200-2500', 'DYJetsToLL_HT2500-Inf']
 #listOfSamples = ['DYJetsToLL_0J_Incl', 'DYJetsToLL_2J_Incl']
-#listOfSamples = ['GJets_HT40-100', 'GJets_HT100-200', 'GJets_HT200-400', 'GJets_HT400-600', 'GJets_HT600-Inf']
+# listOfSamples += ['GJets_HT40-100', 'GJets_HT100-200', 'GJets_HT200-400', 'GJets_HT400-600', 'GJets_HT600-Inf']
 #listOfSamples = ['TTJets_DiLept', 'TTJets_SingleLeptFromT', 'TTJets_FXFX', 'TTJets_MLM']
 #listOfSamples = ['QCD_HT50-100', 'QCD_HT100-200', 'QCD_HT200-300', 'QCD_HT300-500, 'QCD_HT500-700', 'QCD_HT700-1000', 'QCD_HT1000-1500', 'QCD_HT1500-2000', 'QCD_HT2000-Inf']
-#listOfSamples = ['WW', 'WWToLNuQQ', 'WWTo2L2Nu', 'WWTo4Q', 'WZ', 'ZZ']
+# listOfSamples = ['WW', 'WWToLNuQQ', 'WWTo2L2Nu', 'WWTo4Q', 'WZ', 'ZZ']
+
+listOfSamples = ["Zprime_Mx1_Mv1000"]
 
 for sample in listOfSamples:  
   os.popen('cp run_102X_mc2018.py run_102X_mc2018_'+sample+'.py')
@@ -126,7 +129,7 @@ for sample in listOfSamples:
   config.Data.inputDataset   = dataset[sample]
   config.Data.unitsPerJob = 10000
   config.Data.totalUnits = -1
-  config.Data.outLFNDirBase = '/store/user/varuns/'+name
+  config.Data.outLFNDirBase = '/store/user/ekoenig/'+name
   p = Process(target=submit, args=(config,))
   p.start()
   p.join()

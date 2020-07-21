@@ -1,0 +1,4 @@
+#!/bin/sh
+set -e
+cd ../../
+scram b -j 24 USER_CXXFLAGS="-g"
