@@ -2,6 +2,7 @@
 *.pyc
 *.so
 *.root
+crab.log
 crab_*/
 run*.py
 !run*_2017.py
