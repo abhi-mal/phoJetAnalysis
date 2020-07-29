@@ -20,7 +20,7 @@ git checkout master
 cd -
 
 #For 2018 data-taking
-git clone -b 2018_102X https://github.com/varuns23/phoJetAnalysis.git
+git clone -b 2018_102X https://github.com/ekoenig4/phoJetAnalysis.git
 
 scram b -j10
 ```
