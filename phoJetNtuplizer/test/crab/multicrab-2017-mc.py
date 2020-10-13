@@ -98,9 +98,10 @@ config.Site.storageSite = 'T2_US_Wisconsin'
 # listOfSamples += ['DYJetsToLL_HT70-100', 'DYJetsToLL_HT100-200', 'DYJetsToLL_HT200-400', 'DYJetsToLL_HT400-600', 'DYJetsToLL_HT600-800', 'DYJetsToLL_HT800-1200', 'DYJetsToLL_HT1200-2500', 'DYJetsToLL_HT2500-Inf']
 # listOfSamples += ['GJets_HT40-100', 'GJets_HT100-200', 'GJets_HT200-400', 'GJets_HT600-Inf']
 # listOfSamples += ['TTJets_DiLept', 'TTJets_SingleLeptFromT', 'TTJets']
-listOfSamples = ['QCD_HT100-200', 'QCD_HT200-300', 'QCD_HT300-500', 'QCD_HT500-700', 'QCD_HT700-1000', 'QCD_HT1000-1500', 'QCD_HT1500-2000', 'QCD_HT2000-Inf']
-listOfSamples += ['WW', 'WWToLNuQQ', 'WWTo2L2Nu', 'WWTo4Q', 'WZ', 'ZZ']
+# listOfSamples = ['QCD_HT100-200', 'QCD_HT200-300', 'QCD_HT300-500', 'QCD_HT500-700', 'QCD_HT700-1000', 'QCD_HT1000-1500', 'QCD_HT1500-2000', 'QCD_HT2000-Inf']
+# listOfSamples += ['WW', 'WWToLNuQQ', 'WWTo2L2Nu', 'WWTo4Q', 'WZ', 'ZZ']
 
+listOfSamples = ["TTJets_FXFX"]
 for sample in listOfSamples:  
   os.popen('cp run_102X_mc2017.py run_102X_mc2017_'+sample+'.py')
   with open('run_102X_mc2017_'+sample+'.py') as oldFile:

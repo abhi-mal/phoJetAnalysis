@@ -1,0 +1,3 @@
+gsiftp://se01.cmsaf.mit.edu:2811/cms/store/user/bmaier/monojet20/GJets_1j_Gpt-650ToInf_5f_NLO_Fall17/miniaod/
+    140454.96.root 
+
