@@ -1,19 +1,91 @@
 #!/bin/bash
-
-
 datasets=(
-    GJets_1j_Gpt-100To250_5f_NLO
-    GJets_1j_Gpt-250To400_5f_NLO
-    GJets_1j_Gpt-400To650_5f_NLO
-    GJets_1j_Gpt-650ToInf_5f_NLO
+#my_full_reco_test
+MonoZprime_signal_Mx1_Mv10
+MonoZprime_signal_Mx1_Mv20
+MonoZprime_signal_Mx1_Mv50
+MonoZprime_signal_Mx1_Mv100
+MonoZprime_signal_Mx1_Mv200
+MonoZprime_signal_Mx1_Mv300
+MonoZprime_signal_Mx1_Mv500
+MonoZprime_signal_Mx1_Mv1000
+MonoZprime_signal_Mx1_Mv10000
+MonoZprime_signal_Mx10_Mv10
+MonoZprime_signal_Mx10_Mv15
+MonoZprime_signal_Mx10_Mv50
+MonoZprime_signal_Mx10_Mv100
+MonoZprime_signal_Mx10_Mv10000
+MonoZprime_signal_Mx50_Mv10
+MonoZprime_signal_Mx50_Mv50
+MonoZprime_signal_Mx50_Mv95
+MonoZprime_signal_Mx50_Mv200
+MonoZprime_signal_Mx50_Mv300
+MonoZprime_signal_Mx50_Mv10000
+MonoZprime_signal_Mx150_Mv10
+MonoZprime_signal_Mx150_Mv200
+MonoZprime_signal_Mx150_Mv295
+MonoZprime_signal_Mx150_Mv500
+MonoZprime_signal_Mx150_Mv1000
+MonoZprime_signal_Mx150_Mv10000
+MonoZprime_signal_Mx500_Mv10
+MonoZprime_signal_Mx500_Mv500
+MonoZprime_signal_Mx500_Mv995
+MonoZprime_signal_Mx500_Mv10000
+MonoZprime_signal_Mx1000_Mv10
+MonoZprime_signal_Mx1000_Mv1000
+MonoZprime_signal_Mx1000_Mv10000
 )
 
 dirName=(
-    GJets_1j_Gpt-100To250_5f_NLO
-    GJets_1j_Gpt-250To400_5f_NLO
-    GJets_1j_Gpt-400To650_5f_NLO
-    GJets_1j_Gpt-650ToInf_5f_NLO
+#my_full_reco_test
+MonoZprime_signal_Mx1_Mv10
+MonoZprime_signal_Mx1_Mv20
+MonoZprime_signal_Mx1_Mv50
+MonoZprime_signal_Mx1_Mv100
+MonoZprime_signal_Mx1_Mv200
+MonoZprime_signal_Mx1_Mv300
+MonoZprime_signal_Mx1_Mv500
+MonoZprime_signal_Mx1_Mv1000
+MonoZprime_signal_Mx1_Mv10000
+MonoZprime_signal_Mx10_Mv10
+MonoZprime_signal_Mx10_Mv15
+MonoZprime_signal_Mx10_Mv50
+MonoZprime_signal_Mx10_Mv100
+MonoZprime_signal_Mx10_Mv10000
+MonoZprime_signal_Mx50_Mv10
+MonoZprime_signal_Mx50_Mv50
+MonoZprime_signal_Mx50_Mv95
+MonoZprime_signal_Mx50_Mv200
+MonoZprime_signal_Mx50_Mv300
+MonoZprime_signal_Mx50_Mv10000
+MonoZprime_signal_Mx150_Mv10
+MonoZprime_signal_Mx150_Mv200
+MonoZprime_signal_Mx150_Mv295
+MonoZprime_signal_Mx150_Mv500
+MonoZprime_signal_Mx150_Mv1000
+MonoZprime_signal_Mx150_Mv10000
+MonoZprime_signal_Mx500_Mv10
+MonoZprime_signal_Mx500_Mv500
+MonoZprime_signal_Mx500_Mv995
+MonoZprime_signal_Mx500_Mv10000
+MonoZprime_signal_Mx1000_Mv10
+MonoZprime_signal_Mx1000_Mv1000
+MonoZprime_signal_Mx1000_Mv10000
 )
+
+#datasets=(
+#    GJets_1j_Gpt-100To250_5f_NLO
+#    GJets_1j_Gpt-250To400_5f_NLO
+#    GJets_1j_Gpt-400To650_5f_NLO
+#    GJets_1j_Gpt-650ToInf_5f_NLO
+#)
+
+#dirName=(
+#    GJets_1j_Gpt-100To250_5f_NLO
+#    GJets_1j_Gpt-250To400_5f_NLO
+#    GJets_1j_Gpt-400To650_5f_NLO
+#    GJets_1j_Gpt-650ToInf_5f_NLO
+#)
 
 index=-1;
 for sampleName in "${datasets[@]}"; do
@@ -30,9 +102,9 @@ for sampleName in "${datasets[@]}"; do
 	--extra-usercode-files=cfipython \
 	--memory-requirements=4000 \
 	--assume-input-files-exist \
-	--base-requirements='TARGET.PoolName == "HEP" && ((MY.RequiresSharedFS =!= true || TARGET.HasAFS_OSG) && (TARGET.OSG_major =!= undefined || TARGET.IS_GLIDEIN =?= true) && (TARGET.HasParrotCVMFS =?= true || (TARGET.UWCMS_CVMFS_Exists && TARGET.CMS_CVMFS_Exists && TARGET.UWCMS_CVMFS_Revision >= 444 && TARGET.CMS_CVMFS_Revision >= 81620))) && ((MY.NoAutoRequirements =?= true || (TARGET.OSglibc_major == 2 && TARGET.OSglibc_minor >= 17 && (MY.HEP_VO =!= "uscms" || TARGET.CMS_CVMFS_Exists && TARGET.UWCMS_CVMFS_Exists)))) && (TARGET.Arch == "X86_64") && (TARGET.OpSys == "LINUX") && (TARGET.Disk >= RequestDisk) && (TARGET.Memory >= RequestMemory) && (TARGET.HasFileTransfer)' \
+	--base-requirements='TARGET.PoolName == "HEP" && ((MY.RequiresSharedFS =!= true || TARGET.HasAFS_OSG) && (TARGET.OSG_major =!= undefined || TARGET.IS_GLIDEIN =?= true) && (TARGET.HasParrotCVMFS =?= true || (TARGET.UWCMS_CVMFS_Exists && TARGET.CMS_CVMFS_Exists && TARGET.UWCMS_CVMFS_Revision >= 444 && TARGET.CMS_CVMFS_Revision >= 81620))) && ((MY.NoAutoRequirements =?= true || (TARGET.OSglibc_major == 2 && TARGET.OSglibc_minor >= 17 && (MY.HEP_VO =!= "uscms" || TARGET.CMS_CVMFS_Exists && TARGET.UWCMS_CVMFS_Exists)))) && (TARGET.Arch == "X86_64") && (TARGET.OpSys == "LINUX") && (TARGET.HasFileTransfer)' \ #(TARGET.Disk >= RequestDisk) && (TARGET.Memory >= RequestMemory) && (TARGET.HasFileTransfer)' \ # because TARGET.Disk and TARGET.Memory are obsolete
 	${dirName[$index]} \
-	/cms/ekoenig4/Ntuples/2018/CMSSW_10_2_18 \
+	/nfs_scratch/mallampalli/Analysis/Mono-zprime/Signal_generation/GEN-SIM/full_Reco/ntuplize/CMSSW_10_2_18 \
 	$PWD/run_102X_mc2018-farmout.py
 
 done

@@ -13,7 +13,7 @@ process.load("Geometry.CaloEventSetup.CaloTowerConstituents_cfi")
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 from Configuration.AlCa.GlobalTag_condDBv2 import GlobalTag
 #process.GlobalTag = GlobalTag(process.GlobalTag, 'auto:run2_mc', '')
-process.GlobalTag = GlobalTag(process.GlobalTag, '102X_upgrade2018_realistic_v20')
+process.GlobalTag = GlobalTag(process.GlobalTag, '102X_upgrade2018_realistic_v21')
  
 #jec from sqlite
 process.load("CondCore.CondDB.CondDB_cfi")
